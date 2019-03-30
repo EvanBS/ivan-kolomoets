@@ -21,10 +21,6 @@ namespace base_oop
             manager1.AddEmployee(developer3);
             manager1.AddEmployee(designer1);
 
-            foreach (var emp in manager1.Employees)
-            {
-                Console.WriteLine(emp.FirstName);
-            }
 
             Manager manager2 = new Manager("Manager2", "Manager2", 1100, 7);
 
@@ -35,7 +31,8 @@ namespace base_oop
 
             department.CalculateSalary();
 
-            Console.WriteLine(manager1.Salary);
+            Console.WriteLine(manager1.ToString());
+            Console.WriteLine(developer1.ToString());
         }
     }
 }

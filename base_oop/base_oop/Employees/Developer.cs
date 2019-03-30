@@ -15,7 +15,7 @@ namespace base_oop.Employees
 
         public override decimal CalculateSalary()
         {
-            return 0;
+            throw new NotImplementedException();
         }
     }
 }

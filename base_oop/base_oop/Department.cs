@@ -10,7 +10,6 @@ namespace base_oop
 {
     class Department
     {
-        private ICalculator calculator;
         private List<Manager> managers = new List<Manager>();
         private ConcurrentDictionary<Type, ICalculator> dict = new ConcurrentDictionary<Type, ICalculator>();
 
@@ -35,17 +34,13 @@ namespace base_oop
 
         public void GiveSalary(Employee employee)
         {
-            // check empl type
-            // give to calculator emp
 
             if (!dict.ContainsKey(employee.GetType()))
             {
                 dict[employee.GetType()] = CalculatorsFactory.GetCalculator(employee);
             }
 
-            calculator = dict[employee.GetType()];
-
-            calculator.CalculateSalary(employee);
+            dict[employee.GetType()].CalculateSalary(employee);
         }
 
     }

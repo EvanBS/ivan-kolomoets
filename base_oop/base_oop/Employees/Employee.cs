@@ -28,5 +28,10 @@ namespace base_oop.Employees
             this._Experiance = _Experiance;
             this._Manager = _Manager;
         }
+
+        public override string ToString()
+        {
+            return string.Format($"{FirstName} {SecondName}, manager:{Manager} experiance:{Experiance}");
+        }
     }
 }

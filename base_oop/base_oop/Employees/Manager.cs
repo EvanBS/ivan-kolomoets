@@ -23,6 +23,7 @@ namespace base_oop.Employees
         public void AddEmployee(Employee employee)
         {
             employees.Add(employee);
+            employee.Manager = this;
         }
 
 
@@ -30,6 +31,11 @@ namespace base_oop.Employees
         public override decimal CalculateSalary()
         {
             throw new NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
         }
     }
 }
