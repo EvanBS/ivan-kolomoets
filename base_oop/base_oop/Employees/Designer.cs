@@ -4,12 +4,12 @@ using System.Text;
 
 namespace base_oop.Employees
 {
-    class Designer : Employee
+    public class Designer : Employee
     {
-        public Designer(string _FirstName, string _SecondName, decimal _Salary, int _Experiance, decimal _effCoef, Manager _Manager = null)
+        public Designer(string _FirstName, string _SecondName, decimal _Salary, int _Experiance, decimal _effCoeff, Manager _Manager = null)
             : base(_FirstName, _SecondName, _Salary, _Experiance, _Manager)
         {
-            this._effCoeff = _effCoef;
+            this._effCoeff = _effCoeff;
         }
 
         private decimal _effCoeff;
@@ -25,10 +25,6 @@ namespace base_oop.Employees
                 _effCoeff = value > 1 ? 1 : value;
             }
         }
-
-        public override decimal CalculateSalary()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

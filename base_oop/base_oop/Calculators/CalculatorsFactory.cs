@@ -5,7 +5,7 @@ using System.Text;
 
 namespace base_oop.Calculators
 {
-    static class CalculatorsFactory
+    public static class CalculatorsFactory
     {
         public static ICalculator GetCalculator(Employee employee)
         {

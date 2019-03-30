@@ -5,7 +5,7 @@ using System.Text;
 
 namespace base_oop.Calculators
 {
-    interface ICalculator
+    public interface ICalculator
     {
         decimal CalculateSalary(Employee employee);
     }

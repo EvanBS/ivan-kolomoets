@@ -5,7 +5,7 @@ using System.Text;
 
 namespace base_oop.Calculators
 {
-    class DeveloperCalculator : EmployeeCalculator
+    public class DeveloperCalculator : EmployeeCalculator
     {
         // just return base
         public override decimal CalculateSalary(Employee employee)

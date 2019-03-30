@@ -4,7 +4,7 @@ using System.Text;
 
 namespace base_oop.Employees
 {
-    abstract class Employee : IEmployee
+    public abstract class Employee
     {
         protected string _FirstName;
         protected string _SecondName;
@@ -17,9 +17,7 @@ namespace base_oop.Employees
         public decimal Salary { get => _Salary; set => _Salary = value; }
         public int Experiance { get => _Experiance; set => _Experiance = value; }
         public Manager Manager { get => _Manager; set => _Manager = value; }
-
-        public abstract decimal CalculateSalary();
-
+        
         public Employee(string _FirstName, string _SecondName, decimal _Salary, int _Experiance, Manager _Manager = null)
         {
             this._FirstName = _FirstName;
@@ -27,11 +25,16 @@ namespace base_oop.Employees
             this._Salary = _Salary;
             this._Experiance = _Experiance;
             this._Manager = _Manager;
+
+            if (_Manager != null)
+            {
+                _Manager.AddEmployee(this);
+            }
         }
 
         public override string ToString()
         {
-            return string.Format($"{FirstName} {SecondName}, manager:{Manager} experiance:{Experiance}");
+            return string.Format($"{FirstName} {SecondName}, salary: {Salary} manager:{Manager} experiance:{Experiance}");
         }
     }
 }

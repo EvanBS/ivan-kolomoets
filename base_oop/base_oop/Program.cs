@@ -3,18 +3,19 @@ using System;
 
 namespace base_oop
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+
             Department department = new Department();
 
-            Manager manager1 = new Manager("Manager1", "Manager1", 1000, 5);
+            Manager manager1 = new Manager("Manager1", "Manager1", 1000, 7);
 
             Developer developer1 = new Developer("dev1", "dev1", 700, 1, manager1);
             Developer developer2 = new Developer("dev2", "dev2", 500, 0, manager1);
             Developer developer3 = new Developer("dev3", "dev3", 800, 7, manager1);
-            Designer designer1 = new Designer("designer1", "designer1", 800, 3, 0.7m, manager1);
+            Designer designer1 = new Designer("designer1", "designer1", 800, 4, 0.7m, manager1);
 
             manager1.AddEmployee(developer1);
             manager1.AddEmployee(developer2);
@@ -30,9 +31,6 @@ namespace base_oop
 
 
             department.CalculateSalary();
-
-            Console.WriteLine(manager1.ToString());
-            Console.WriteLine(developer1.ToString());
         }
     }
 }

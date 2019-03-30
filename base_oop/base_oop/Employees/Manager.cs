@@ -4,7 +4,7 @@ using System.Text;
 
 namespace base_oop.Employees
 {
-    class Manager : Employee
+    public class Manager : Employee
     {
         private List<Employee> employees = new List<Employee>();
 
@@ -22,20 +22,11 @@ namespace base_oop.Employees
 
         public void AddEmployee(Employee employee)
         {
-            employees.Add(employee);
+            if (!Employees.Contains(employee))
+                employees.Add(employee);
+
             employee.Manager = this;
         }
 
-
-
-        public override decimal CalculateSalary()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override string ToString()
-        {
-            return base.ToString();
-        }
     }
 }

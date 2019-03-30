@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace base_oop
 {
-    class Department
+    public class Department
     {
         private List<Manager> managers = new List<Manager>();
         private ConcurrentDictionary<Type, ICalculator> dict = new ConcurrentDictionary<Type, ICalculator>();
