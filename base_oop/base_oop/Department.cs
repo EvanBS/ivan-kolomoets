@@ -21,7 +21,7 @@ namespace base_oop
 
         public void CalculateSalary()
         {
-            // flatten employees?
+
             Parallel.ForEach(managers, m =>
             {
                 Parallel.ForEach(m.Employees, emps => GiveSalary(emps));
@@ -32,12 +32,30 @@ namespace base_oop
 
         }
 
+        private ICalculator GetCalculator(Employee employee)
+        {
+            if (employee is Designer)
+            {
+                return new DesignerCalculator();
+            }
+            else if (employee is Manager)
+            {
+                return new ManagerCalculator();
+            }
+            else if (employee is Developer)
+            {
+                return new DeveloperCalculator();
+            }
+
+            throw new FormatException("Invalid employee");
+        }
+
         public void GiveSalary(Employee employee)
         {
 
             if (!dict.ContainsKey(employee.GetType()))
             {
-                dict[employee.GetType()] = CalculatorsFactory.GetCalculator(employee);
+                dict[employee.GetType()] = GetCalculator(employee);
             }
 
             dict[employee.GetType()].CalculateSalary(employee);
